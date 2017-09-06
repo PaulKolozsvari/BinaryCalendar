@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.Web.Service", "BinaryCalendar.Web.Service\BinaryCalendar.Web.Service.csproj", "{B3B29F52-9EDF-4E2C-ADFA-926374B80C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figlut.Server.Toolkit.45", "..\..\..\..\FiglutSuiteRepo\source\trunk\Windows\Figlut.Server.Toolkit.45\Figlut.Server.Toolkit.45.csproj", "{A7C9A24D-E19B-42F5-A298-805A489334EF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.Utilities", "BinaryCalendar.Utilities\BinaryCalendar.Utilities.csproj", "{D50078E3-EC0B-4092-B5CD-0D473C94CF0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.ORM", "BinaryCalendar.ORM\BinaryCalendar.ORM.csproj", "{B977833A-4AAE-4D1B-90CC-AFEE173518C9}"
@@ -12,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.DTO", "BinaryCalendar.DTO\BinaryCalendar.DTO.csproj", "{2F93F4BD-682B-4B1C-904D-0BCF65F60B75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.Web.Site", "BinaryCalendar.Web.Site\BinaryCalendar.Web.Site.csproj", "{43C31137-4D8A-43F5-A2EA-9617B7217DAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figlut.Server.Toolkit.45", "..\..\..\..\Figlut-Suite\source\trunk\Windows\Figlut.Server.Toolkit.45\Figlut.Server.Toolkit.45.csproj", "{A7C9A24D-E19B-42F5-A298-805A489334EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,16 +32,6 @@ Global
 		{B3B29F52-9EDF-4E2C-ADFA-926374B80C6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3B29F52-9EDF-4E2C-ADFA-926374B80C6F}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B29F52-9EDF-4E2C-ADFA-926374B80C6F}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
-		{A7C9A24D-E19B-42F5-A298-805A489334EF}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 		{D50078E3-EC0B-4092-B5CD-0D473C94CF0D}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
 		{D50078E3-EC0B-4092-B5CD-0D473C94CF0D}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{D50078E3-EC0B-4092-B5CD-0D473C94CF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -82,6 +72,16 @@ Global
 		{43C31137-4D8A-43F5-A2EA-9617B7217DAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43C31137-4D8A-43F5-A2EA-9617B7217DAB}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{43C31137-4D8A-43F5-A2EA-9617B7217DAB}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C9A24D-E19B-42F5-A298-805A489334EF}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
