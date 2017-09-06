@@ -1,0 +1,106 @@
+﻿@model BinaryCalendar.Web.Site.Models.RegisterModel
+
+@using BinaryCalendar.Web.Site.Configuration;
+@using BinaryCalendar.Web.Site.Extensions;
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="centerForm">
+    <form id="RegisterForm">
+        @Html.ValidationSummary("Register failed.")
+        <fieldset>
+            <legend>User</legend>
+            <div class="field-label">
+                @Html.Raw("User Name")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.UserName, new{ onkeypress = "return searchKeyPress(event)"})
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+            <div class="field-label">
+                @Html.Raw("Password")
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="field-label">
+                @Html.Raw("Confirm Password")
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </div>
+            <div class="field-label">
+                @Html.Raw("Email Address")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.EmailAddress)
+                @Html.ValidationMessageFor(m => m.EmailAddress)
+            </div>
+            <div class="buttons">
+                @Html.LinkButtonForSubmit("Register", "onRegisterClick()", "btnRegister")
+                @Html.LinkButtonForCancel("Cancel", "onRegisterCancelClick()", "btnCancel")
+                @*@Html.ActionLink("Reset Password", "ResetPassword")*@
+            </div>
+            <div id="RegisterErrorField" style="color:#8A0808"></div>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#UserName").focus();
+        $(document).keypress(function (event) {
+            if (event.which == 13) {
+                $("#btnRegister").click();
+            }
+        });
+    });
+
+    function searchKeyPress(e) {
+        // look for window.event in case event isn't passed in
+        e = e || window.event;
+        if (e.keyCode == 13) {
+            document.getElementById('btnRegister').click();
+            return false;
+        }
+        return true;
+    }
+
+    function onRegisterClick() {
+        $.ajax({
+            url: '@Url.Action("Register", "User")',
+            type: 'POST',
+            data: $("#RegisterForm").serialize(),
+            success: function (data) {
+                if (data.Success) {
+                    var url = '@Url.Content("~/Home")'
+                    window.location.href = url;
+                } else {
+                    $("#RegisterErrorField").html(data.ErrorMsg);
+                }
+            }
+        })
+    };
+
+    function onRegisterCancelClick() {
+        var url = '@Url.Content("~/Home")';
+        window.location.href = url;
+    };
+</script>

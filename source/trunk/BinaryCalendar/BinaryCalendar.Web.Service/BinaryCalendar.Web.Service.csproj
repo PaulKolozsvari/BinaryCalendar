@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3B29F52-9EDF-4E2C-ADFA-926374B80C6F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BinaryCalendar.Web.Service</RootNamespace>
+    <AssemblyName>BinaryCalendar.Web.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime">
+      <HintPath>..\packages\Ical.Net.2.2.20\lib\net45\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net">
+      <HintPath>..\packages\Ical.Net.2.2.20\lib\net45\Ical.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net.Collections">
+      <HintPath>..\packages\Ical.Net.2.2.20\lib\net45\Ical.Net.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime">
+      <HintPath>..\packages\Ical.Net.2.2.20\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinaryCalendarService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BinaryCalendarService.Designer.cs">
+      <DependentUpon>BinaryCalendarService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\BcServiceApp.cs" />
+    <Compile Include="Configuration\BcServiceSettings.cs" />
+    <Compile Include="Configuration\CountryCalendarImportInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rest\BinaryCalendarRestService.cs" />
+    <Compile Include="Rest\IBinaryCalendarRestService.cs" />
+    <Compile Include="Rest\UserValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BinaryCalendarService.resx">
+      <DependentUpon>BinaryCalendarService.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\FiglutSuiteRepo\source\trunk\Windows\Figlut.Server.Toolkit.45\Figlut.Server.Toolkit.45.csproj">
+      <Project>{a7c9a24d-e19b-42f5-a298-805a489334ef}</Project>
+      <Name>Figlut.Server.Toolkit.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BinaryCalendar.DTO\BinaryCalendar.DTO.csproj">
+      <Project>{2f93f4bd-682b-4b1c-904d-0bcf65f60b75}</Project>
+      <Name>BinaryCalendar.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BinaryCalendar.ORM\BinaryCalendar.ORM.csproj">
+      <Project>{b977833a-4aae-4d1b-90cc-afee173518c9}</Project>
+      <Name>BinaryCalendar.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BinaryCalendar.Utilities\BinaryCalendar.Utilities.csproj">
+      <Project>{d50078e3-ec0b-4092-b5cd-0d473c94cf0d}</Project>
+      <Name>BinaryCalendar.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BcServiceSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="READ-ME.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

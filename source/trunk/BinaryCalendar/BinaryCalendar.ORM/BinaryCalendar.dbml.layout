@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 8.5" name="BinaryCalendar">
+  <DataContextMoniker Name="/BinaryCalendarDataContext" />
+  <nestedChildShapes>
+    <classShape Id="12644942-3179-4320-a9b0-46277f2c0e2d" absoluteBounds="3.375, 5.25, 2, 1.5833830238382021">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/EmailNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36aef607-fa97-49d6-a97d-0a4214449b39" absoluteBounds="3.39, 5.71, 1.9700000000000002, 1.023383023838202" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f33844ca-550f-475c-918b-fa3342d2dbea" absoluteBounds="6.125, 4, 2, 1.5833830238382021">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/EmailNotificationAttachment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a54cd603-df6e-4f5c-9e9b-0c267e032862" absoluteBounds="6.14, 4.46, 1.9700000000000002, 1.023383023838202" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3eaafab9-5ce9-4a9a-b100-e5199f7f6b92" absoluteBounds="6.125, 6.375, 2, 1.5833830238382021">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/EmailNotificationRecipient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c95bad92-07e6-4c8e-ba8b-918ec0591ae4" absoluteBounds="6.14, 6.835, 1.9700000000000002, 1.023383023838202" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 5.4166915119191); (6.125 : 5.4166915119191)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BinaryCalendarDataContext/EmailNotification/EmailNotification_EmailNotificationAttachment" />
+      <nodes>
+        <classShapeMoniker Id="12644942-3179-4320-a9b0-46277f2c0e2d" />
+        <classShapeMoniker Id="f33844ca-550f-475c-918b-fa3342d2dbea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 6.6041915119191); (6.125 : 6.6041915119191)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BinaryCalendarDataContext/EmailNotification/EmailNotification_EmailNotificationRecipient" />
+      <nodes>
+        <classShapeMoniker Id="12644942-3179-4320-a9b0-46277f2c0e2d" />
+        <classShapeMoniker Id="3eaafab9-5ce9-4a9a-b100-e5199f7f6b92" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8e60001c-23d9-4c95-a9e5-257abf981450" absoluteBounds="10, 3.25, 2, 2.7424145043889681">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/ServerAction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36c67407-59e7-483c-b229-b9f5fb7d7fd7" absoluteBounds="10.015, 3.7100000000000009, 1.9700000000000002, 2.182414504388968" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f82c333f-9648-4e0f-b4af-3e0daa893a29" absoluteBounds="10, 0.5, 2, 1.969726850688458">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/ServerError" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f3edd9e-7ff2-4f5b-81ca-32685c285524" absoluteBounds="10.015, 0.96, 1.9700000000000002, 1.4097268506884575" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="865c8c51-0c2b-4b86-b938-d0bdba5b5397" absoluteBounds="1, 1.25, 2, 2.7424145043889681">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/PublicHoliday" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f92c724-a038-4dad-8dcf-c49385cd837b" absoluteBounds="1.0150000000000001, 1.71, 1.9700000000000002, 2.182414504388968" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9044dab-97ff-4950-96c1-83699b4a51ba" absoluteBounds="4.125, 1, 2, 2.1628987641135851">
+      <DataClassMoniker Name="/BinaryCalendarDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9646a6a-697e-437f-bb0e-0bbab8d9f80a" absoluteBounds="4.14, 1.46, 1.9700000000000002, 1.602898764113585" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 3.16289876411359); (5.75 : 3.59375); (10 : 3.59375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BinaryCalendarDataContext/User/User_ServerAction" />
+      <nodes>
+        <classShapeMoniker Id="d9044dab-97ff-4950-96c1-83699b4a51ba" />
+        <classShapeMoniker Id="8e60001c-23d9-4c95-a9e5-257abf981450" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 1.73486342534423); (10 : 1.73486342534423)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BinaryCalendarDataContext/User/User_ServerError" />
+      <nodes>
+        <classShapeMoniker Id="d9044dab-97ff-4950-96c1-83699b4a51ba" />
+        <classShapeMoniker Id="f82c333f-9648-4e0f-b4af-3e0daa893a29" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BinaryCalendar" Class="BinaryCalendarDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PAULKOLOZSV38D1\MSSQLSERVER2012;Initial Catalog=BinaryCalendar;Persist Security Info=True;User ID=sa" SettingsObjectName="BinaryCalendar.ORM.Properties.Settings" SettingsPropertyName="BinaryCalendarConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EmailNotification" Member="EmailNotifications">
+    <Type Name="EmailNotification">
+      <Column Name="EmailNotificationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="EmailNotification_EmailNotificationAttachment" Member="EmailNotificationAttachments" ThisKey="EmailNotificationId" OtherKey="EmailNotificationId" Type="EmailNotificationAttachment" />
+      <Association Name="EmailNotification_EmailNotificationRecipient" Member="EmailNotificationRecipients" ThisKey="EmailNotificationId" OtherKey="EmailNotificationId" Type="EmailNotificationRecipient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmailNotificationAttachment" Member="EmailNotificationAttachments">
+    <Type Name="EmailNotificationAttachment">
+      <Column Name="EmailNotificationAttachmentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentFilePath" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailNotificationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="EmailNotification_EmailNotificationAttachment" Member="EmailNotification" ThisKey="EmailNotificationId" OtherKey="EmailNotificationId" Type="EmailNotification" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmailNotificationRecipient" Member="EmailNotificationRecipients">
+    <Type Name="EmailNotificationRecipient">
+      <Column Name="EmailNotificationRecipientId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecipientEmailAddress" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailNotificationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="EmailNotification_EmailNotificationRecipient" Member="EmailNotification" ThisKey="EmailNotificationId" OtherKey="EmailNotificationId" Type="EmailNotification" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServerAction" Member="ServerActions">
+    <Type Name="ServerAction">
+      <Column Name="ServerActionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Function]" Member="Function" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntityChanged" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FieldChanged" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OriginalValue" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NewValue" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="User_ServerAction" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServerError" Member="ServerErrors">
+    <Type Name="ServerError">
+      <Column Name="ServerErrorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="User_ServerError" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PublicHoliday" Member="PublicHolidays">
+    <Type Name="PublicHoliday">
+      <Column Name="PublicHolidayId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EventName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="DateIdentifier" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HolidayDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="User_ServerAction" Member="ServerActions" ThisKey="UserId" OtherKey="UserId" Type="ServerAction" />
+      <Association Name="User_ServerError" Member="ServerErrors" ThisKey="UserId" OtherKey="UserId" Type="ServerError" />
+    </Type>
+  </Table>
+</Database>

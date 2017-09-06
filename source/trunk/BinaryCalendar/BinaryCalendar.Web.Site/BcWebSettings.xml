@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BcWebSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ShowMessageBoxOnException>false</ShowMessageBoxOnException>
+  <ApplicationName>Binary Calendar</ApplicationName>
+  <EmailNotificationsEnabled>true</EmailNotificationsEnabled>
+  <EmailDatabaseLoggingEnabled>true</EmailDatabaseLoggingEnabled>
+  <EmailDatabaseLogMessageContents>true</EmailDatabaseLogMessageContents>
+  <EmailType>GMail</EmailType><!--Exchange/GMail-->
+  <LocalSmtpServer>192.168.1.14</LocalSmtpServer><!--or 192.168.1.57-->
+  <LocalSmtpUserName>internal\toadnuts</LocalSmtpUserName>
+  <LocalSmtpPassword>d@t@sm1th</LocalSmtpPassword>
+  <LocalSmtpPort>21</LocalSmtpPort>
+  <LocalSmtpEnableSsl>false</LocalSmtpEnableSsl>
+  <GMailSMTPServer>smtp.gmail.com</GMailSMTPServer>
+  <GMailSmtpUserName>paul.kolozsvario@binarychef.com</GMailSmtpUserName>
+  <GMailSmtpPassword>T665h%NJa</GMailSmtpPassword>
+  <GMailSmtpPort>587</GMailSmtpPort>
+  <SenderEmailAddress>paul.kolozsvari@binarychef.com</SenderEmailAddress>
+  <SenderDisplayName>Binary Chef Notification</SenderDisplayName>
+  <IncludeDefaultEmailRecipients>true</IncludeDefaultEmailRecipients>
+  <LogToFile>false</LogToFile>
+  <LogToWindowsEventLog>true</LogToWindowsEventLog>
+  <LogToConsole>true</LogToConsole>
+  <LogFileName>BCalendar.Log.txt</LogFileName>
+  <EventSourceName>BCalendar.Source</EventSourceName>
+  <EventLogName>BCalendar.Log</EventLogName>
+  <LoggingLevel>Maximum</LoggingLevel>
+  <DatabaseConnectionString>Data Source=PAULKOLOZSV38D1\MSSQLSERVER2012;Initial Catalog=BinaryCalendar;Persist Security Info=True;User ID=sa;Password=27830529</DatabaseConnectionString>
+  <DatabaseCommandTimeout>30000</DatabaseCommandTimeout>
+  <LinqToSQLClassesAssemblyFileName>BinaryCalendar.ORM.dll</LinqToSQLClassesAssemblyFileName>
+  <LinqToSQLClassesNamespace>BinaryCalendar.ORM</LinqToSQLClassesNamespace>
+</BcWebSettings>

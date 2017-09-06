@@ -1,0 +1,34 @@
+﻿iCalendar .ics file definition: https://en.wikipedia.org/wiki/ICalendar
+
+Public Holiday Websites: 
+	http://holidays.kayaposoft.com/public_holidays.php?country=zaf
+	e.g.
+		http://www.kayaposoft.com/enrico/ics/v1.0?country=zaf&fromDate=01-01-2017&toDate=31-12-2017
+		http://www.kayaposoft.com/enrico/ics/v1.0?country=zaf&fromDate=01-01-2018&toDate=31-12-2018
+
+
+	http://www.calendarlabs.com/ical-calendar-holidays.php
+
+iCalendar Main website: https://icalendar.org/
+iCalendar Specification: https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/
+
+iCal.NET: 
+
+Open Source Project URL: https://github.com/rianjs/ical.net
+Documentation: https://github.com/rianjs/ical.net/wiki/Deserialize-an-ics-file
+NuGet Package (old version): https://www.nuget.org/packages/DDay.iCal/1.0.2.575
+To get latest version use the NuGet Package Manager by searching for iCal.NET.
+
+Sample URLs for Binary Calendar Web Service:
+	Base URL: 
+		http://127.0.0.1:2985/PublicHolidaysAPI/
+	Get all the countries and country codes: 
+		http://127.0.0.1:2985/PublicHolidaysAPI/CountryInfo
+	Get a specific public holiday: 
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/{countryCode}/searchBy?year={year}&month={month}&day={day}
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/ZA/searchBy?year=2016&month=12&day=25
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/ZA/searchBy?year=2016&month=12&day=
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/ZA/searchBy?year=2016&month=&day=25
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/ZA/searchBy?year=2016&month=&day=
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/ZA/searchBy?year=&month=&day=
+		http://127.0.0.1:2985/PublicHolidaysAPI/PublicHolidayInfo/ZA/searchBy?year=*&month=*&day=*

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BcServiceSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ShowMessageBoxOnException>false</ShowMessageBoxOnException>
+  <ApplicationName>Binary Calendar Web Service</ApplicationName>
+  <LogoFilePath>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\Images\BinaryChef\BinaryChefLogo.png</LogoFilePath>
+  <CountryCalendarImportDirectories>
+    <CountryCalendarImportInfo>
+      <CountryCode>ZA</CountryCode>
+      <CountryName>South Africa</CountryName>
+      <ICalendarImportDirectory>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\staging data\Calendar\South Africa</ICalendarImportDirectory>
+    </CountryCalendarImportInfo>
+    <CountryCalendarImportInfo>
+      <CountryCode>ROU</CountryCode>
+      <CountryName>Romania</CountryName>
+      <ICalendarImportDirectory>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\staging data\Calendar\Romania</ICalendarImportDirectory>
+    </CountryCalendarImportInfo>
+  </CountryCalendarImportDirectories>
+  <DeleteICalendarFilesAfterImport>false</DeleteICalendarFilesAfterImport>
+  <LogToFile>false</LogToFile>
+  <LogToWindowsEventLog>true</LogToWindowsEventLog>
+  <LogToConsole>true</LogToConsole>
+  <LogFileName>BCalendar.Log.txt</LogFileName>
+  <EventSourceName>BCalendar.Source</EventSourceName>
+  <EventLogName>BCalendar.Log</EventLogName>
+  <LoggingLevel>Maximum</LoggingLevel>
+  <DatabaseConnectionString>Data Source=PAULKOLOZSV38D1\MSSQLSERVER2012;Initial Catalog=BinaryCalendar;Persist Security Info=True;User ID=sa;Password=27830529</DatabaseConnectionString>
+  <DatabaseCommandTimeout>30000</DatabaseCommandTimeout>
+  <LinqToSQLClassesAssemblyFileName>BinaryCalendar.ORM.dll</LinqToSQLClassesAssemblyFileName>
+  <LinqToSQLClassesNamespace>BinaryCalendar.ORM</LinqToSQLClassesNamespace>
+  <HostAddressSuffix>PublicHolidaysAPI</HostAddressSuffix>
+  <PortNumber>2985</PortNumber>
+  <UseAuthentication>true</UseAuthentication>
+  <IncludeExceptionDetailInResponse>true</IncludeExceptionDetailInResponse>
+  <TextResponseEncoding>UTF8</TextResponseEncoding>
+  <MaxBufferPoolSize>2147483647</MaxBufferPoolSize>
+  <MaxBufferSize>2147483647</MaxBufferSize>
+  <MaxReceivedMessageSize>2147483647</MaxReceivedMessageSize>
+  <TraceHttpMessages>false</TraceHttpMessages>
+  <TraceHttpMessageHeaders>false</TraceHttpMessageHeaders>
+  <AuditServiceCalls>true</AuditServiceCalls>
+  <EnableEmailNotifications>true</EnableEmailNotifications>
+  <EmailType>GMail</EmailType>
+  <!--Exchange/GMail-->
+  <LocalSmtpServer>192.168.1.14</LocalSmtpServer>
+  <!--or 192.168.1.57-->
+  <LocalSmtpUserName>internal\toadnuts</LocalSmtpUserName>
+  <LocalSmtpPassword>d@t@sm1th</LocalSmtpPassword>
+  <LocalSmtpPort>21</LocalSmtpPort>
+  <LocalSmtpEnableSsl>false</LocalSmtpEnableSsl>
+  <GMailSMTPServer>smtp.gmail.com</GMailSMTPServer>
+  <GMailSmtpUserName>DatasmithSIP@gmail.com</GMailSmtpUserName>
+  <GMailSmtpPassword>d@t@$m1th</GMailSmtpPassword>
+  <GMailSmtpPort>587</GMailSmtpPort>
+  <SenderEmailAddress>DatasmithSIP@gmail.com</SenderEmailAddress>
+  <SenderDisplayName>TouchBuy</SenderDisplayName>
+  <SendEmailsLater>true</SendEmailsLater>
+  <EnableErrorEmailNotifications>true</EnableErrorEmailNotifications>
+  <ErrorEmailNotificationAddress>paul.kolozsvari@binarychef.com</ErrorEmailNotificationAddress>
+  <EmailAttachmentsDirectory>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\BinaryCalendar.Web.Service\EmailAttachments</EmailAttachmentsDirectory>
+</BcServiceSettings>
