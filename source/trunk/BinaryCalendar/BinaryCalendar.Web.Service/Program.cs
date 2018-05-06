@@ -15,6 +15,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Net;
     using System.ServiceProcess;
     using System.Text;
     using System.Threading.Tasks;
@@ -29,6 +30,7 @@
         private const string HELP_QUESTION_MARK_ARGUMENT = "/?";
         private const string RESET_SETTINGS_ARGUMENT = "/reset_settings";
         private const string START_TEST_MODE_ARGUMENT = "/start";
+        private const string DOWNLOAD_ICALENDAR = "/download_icalendar";
         private const string IMPORT_ICALENDAR_FILES = "/import_icalendar";
 
         #endregion //Constants
@@ -64,6 +66,19 @@
                     case IMPORT_ICALENDAR_FILES:
                         ImportICalendarFiles();
                         return false;
+                    case DOWNLOAD_ICALENDAR:
+                        if (args.Length < i + 4)
+                        {
+                            throw new ArgumentException(string.Format(
+                                @"{0} requires 4 additional parameters: country Code, country Name, start date and end date e.g. /download_icalendar zaf 'South Africa' 01-01-2018 31-12-2018",
+                                DOWNLOAD_ICALENDAR));
+                        }
+                        string countryCode = args[i + 1];
+                        string countryName = args[i + 2];
+                        string startDate = args[i + 3];
+                        string endDate = args[i + 4];
+                        DownloadICalCalendar(countryCode, countryName, startDate, endDate);
+                        return false;
                     default:
                         throw new ArgumentException(string.Format("Invalid argument '{0}'.", a));
                 }
@@ -79,6 +94,7 @@
             Console.WriteLine("{0} : Resets the service's settings file with the default settings (server is not started).", RESET_SETTINGS_ARGUMENT);
             Console.WriteLine("{0} : Starts the service as a console application instead of a windows service.", START_TEST_MODE_ARGUMENT);
             Console.WriteLine("{0} : Imports .ics iCalendar files into the database based on import directoties set in settings.", IMPORT_ICALENDAR_FILES);
+            Console.WriteLine("{0} : Downloads a .ics iCalendar file for a specific country and date range e.g. {0} zaf South Africa 01-01-2018 31-12-2018", DOWNLOAD_ICALENDAR);
             Console.WriteLine();
             Console.WriteLine("N.B. Executing without any parameters runs the server as a windows service.");
         }
@@ -184,6 +200,29 @@
 
                     GOC.Instance.Logger.LogMessage(new LogMessage(string.Format("Completed iCalendar file import: {0} ...", f), LogMessageType.SuccessAudit, LoggingLevel.Minimum));
                 }
+            }
+        }
+
+        private static void DownloadICalCalendar(string countryCode, string countryName, string startDate, string endDate)
+        {
+            BcServiceApp.Instance.Initialize(false);
+            string downloadUrl = string.Format(BcServiceApp.Instance.Settings.ICalendarUrl, countryCode, startDate, endDate);
+            using (WebClient webClient = new WebClient())
+            {
+                string fileName = string.Format("{0}-{1}-{2}.{3}", countryCode, startDate, endDate, ICalPublicHolidayParser.ICALENDAR_FILE_EXTENSION);
+                string filePath = Path.Combine(Path.GetTempPath(), fileName);
+                GOC.Instance.Logger.LogMessage(new LogMessage(string.Format("Downloading iCalendar to file: {0} ...", filePath), LogMessageType.Information, LoggingLevel.Normal));
+                webClient.DownloadFile(downloadUrl, filePath);
+
+                GOC.Instance.Logger.LogMessage(new LogMessage(string.Format("Parsing iCalendar file: {0} ...", filePath), LogMessageType.Information, LoggingLevel.Normal));
+                ICalCalendar calender = ICalPublicHolidayParser.ParseICalendarFile(filePath, countryCode, countryName);
+
+                BcEntityContext context = BcEntityContext.Create();
+                GOC.Instance.Logger.LogMessage(new LogMessage(string.Format("Saving iCalendar to DB: {0} ...", filePath), LogMessageType.Information, LoggingLevel.Normal));
+                context.SaveICalCalendar(calender);
+
+                GOC.Instance.Logger.LogMessage(new LogMessage(string.Format("Deleting iCalendar file: {0} ...", filePath), LogMessageType.Information, LoggingLevel.Normal));
+                File.Delete(filePath);
             }
         }
 

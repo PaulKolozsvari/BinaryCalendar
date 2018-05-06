@@ -5,17 +5,18 @@
   <LogoFilePath>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\Images\BinaryChef\BinaryChefLogo.png</LogoFilePath>
   <CountryCalendarImportDirectories>
     <CountryCalendarImportInfo>
-      <CountryCode>ZA</CountryCode>
+      <CountryCode>zaf</CountryCode>
       <CountryName>South Africa</CountryName>
-      <ICalendarImportDirectory>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\staging data\Calendar\South Africa</ICalendarImportDirectory>
+      <ICalendarImportDirectory>C:\Docs\Git\BinaryCalendar\source\trunk\BinaryCalendar\staging data\Calendar\South Africa</ICalendarImportDirectory>
     </CountryCalendarImportInfo>
     <CountryCalendarImportInfo>
-      <CountryCode>ROU</CountryCode>
+      <CountryCode>rou</CountryCode>
       <CountryName>Romania</CountryName>
-      <ICalendarImportDirectory>C:\Docs\Work\BinaryCalendarRepo\source\trunk\BinaryCalendar\staging data\Calendar\Romania</ICalendarImportDirectory>
+      <ICalendarImportDirectory>C:\Docs\Git\BinaryCalendar\source\trunk\BinaryCalendar\staging data\Calendar\Romania</ICalendarImportDirectory>
     </CountryCalendarImportInfo>
   </CountryCalendarImportDirectories>
   <DeleteICalendarFilesAfterImport>false</DeleteICalendarFilesAfterImport>
+  <ICalendarUrl>http://www.kayaposoft.com/enrico/ics/v1.0?country={0}&amp;fromDate={1}&amp;toDate={2}</ICalendarUrl><!--e.g. http://www.kayaposoft.com/enrico/ics/v1.0?country=zaf&fromDate=01-01-2018&toDate=31-12-2018-->
   <LogToFile>false</LogToFile>
   <LogToWindowsEventLog>true</LogToWindowsEventLog>
   <LogToConsole>true</LogToConsole>

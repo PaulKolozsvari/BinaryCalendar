@@ -63,6 +63,12 @@
         [SettingInfo("Application", AutoFormatDisplayName = true, Description = "Whether or not to delete the .ics iCalendar files after importing them.", CategorySequenceId = 3)]
         public bool DeleteICalendarFilesAfterImport { get; set; }
 
+        /// <summary>
+        /// "The URL to use to download the i Calendar files."
+        /// </summary>
+        [SettingInfo("Application", AutoFormatDisplayName = true, Description = "The URL to use to download the i Calendar files.")]
+        public string ICalendarUrl { get; set; }
+
         #endregion //Application Settings
 
         #region Logging
