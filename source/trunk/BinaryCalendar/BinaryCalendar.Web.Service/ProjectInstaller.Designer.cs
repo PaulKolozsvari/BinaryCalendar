@@ -40,7 +40,7 @@
             // BinaryCalendarServiceInstaller
             // 
             this.BinaryCalendarServiceInstaller.Description = "Web service for querying calendar and public holidays.";
-            this.BinaryCalendarServiceInstaller.ServiceName = "BinaryCalendarService";
+            this.BinaryCalendarServiceInstaller.ServiceName = "Binary Calendar Service";
             this.BinaryCalendarServiceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller

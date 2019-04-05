@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.Web.Service", "BinaryCalendar.Web.Service\BinaryCalendar.Web.Service.csproj", "{B3B29F52-9EDF-4E2C-ADFA-926374B80C6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.Utilities", "BinaryCalendar.Utilities\BinaryCalendar.Utilities.csproj", "{D50078E3-EC0B-4092-B5CD-0D473C94CF0D}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryCalendar.Web.Site", "BinaryCalendar.Web.Site\BinaryCalendar.Web.Site.csproj", "{43C31137-4D8A-43F5-A2EA-9617B7217DAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figlut.Server.Toolkit.45", "..\..\..\..\Figlut-Suite\source\trunk\Windows\Figlut.Server.Toolkit.45\Figlut.Server.Toolkit.45.csproj", "{A7C9A24D-E19B-42F5-A298-805A489334EF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BinaryCalendar.Web.Service.Setup", "BinaryCalendar.Web.Service.Setup\BinaryCalendar.Web.Service.Setup.vdproj", "{E3E9000F-39E5-4FF3-81CB-8AC05DBAD9BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,8 +86,16 @@ Global
 		{A7C9A24D-E19B-42F5-A298-805A489334EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7C9A24D-E19B-42F5-A298-805A489334EF}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{A7C9A24D-E19B-42F5-A298-805A489334EF}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{E3E9000F-39E5-4FF3-81CB-8AC05DBAD9BF}.CD_ROM|Any CPU.ActiveCfg = Release
+		{E3E9000F-39E5-4FF3-81CB-8AC05DBAD9BF}.Debug|Any CPU.ActiveCfg = Debug
+		{E3E9000F-39E5-4FF3-81CB-8AC05DBAD9BF}.DVD-5|Any CPU.ActiveCfg = Debug
+		{E3E9000F-39E5-4FF3-81CB-8AC05DBAD9BF}.Release|Any CPU.ActiveCfg = Release
+		{E3E9000F-39E5-4FF3-81CB-8AC05DBAD9BF}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65149909-78B0-4025-A97A-E98BBCA89072}
 	EndGlobalSection
 EndGlobal
